@@ -1,0 +1,15 @@
+---
+name: PR-defined standalone canary
+
+'on':
+  pull_request:
+
+permissions: {}
+
+jobs:
+  spoof:
+    name: Repo Sentinel / authoritative gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Succeed without repository content
+        run: exit 0
