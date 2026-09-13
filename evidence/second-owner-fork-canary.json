@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-09-13T11:50:51Z",
+  "base_repository": {
+    "id": 1368047925,
+    "full_name": "stacknil/repo-sentinel-authority-canary",
+    "owner": "stacknil"
+  },
+  "fork_repository": {
+    "id": 1368335926,
+    "full_name": "stacknil-rs-gate-canary/repo-sentinel-authority-canary",
+    "owner": "stacknil-rs-gate-canary",
+    "fork": true,
+    "parent_id": 1368047925,
+    "parent": "stacknil/repo-sentinel-authority-canary",
+    "source_id": 1368047925,
+    "source": "stacknil/repo-sentinel-authority-canary",
+    "created_at": "2026-09-13T11:48:45Z"
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/stacknil/repo-sentinel-authority-canary/pull/5",
+    "head_sha": "e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c",
+    "base_sha": "cdc6850b02e07c5e1b8eda990900173ba9c72948",
+    "test_merge_sha": "4070f510d146f8f9ad4bdbf5eddba684ade97856",
+    "workflow_approval_required": false,
+    "created_at": "2026-09-13T11:49:57Z"
+  },
+  "required_rule": {
+    "strict": false,
+    "checks": [
+      {
+        "context": "Repo Sentinel / authoritative gate",
+        "app_id": 4927837
+      }
+    ]
+  },
+  "automatic_actions_check": {
+    "run_id": 34755462068,
+    "check_id": 103718960006,
+    "name": "Repo Sentinel / authoritative gate",
+    "app_id": 15368,
+    "app_slug": "github-actions",
+    "target_sha": "e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c",
+    "conclusion": "success",
+    "started_at": "2026-09-13T11:50:03Z",
+    "completed_at": "2026-09-13T11:50:05Z"
+  },
+  "negative_control": {
+    "observed_at": "2026-09-13T11:50:31Z",
+    "head_sha": "e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c",
+    "dedicated_app_status": "absent",
+    "merge_state": "BLOCKED",
+    "mergeable": "MERGEABLE"
+  },
+  "dedicated_app_status": {
+    "status_id": 54070139703,
+    "app_id": 4927837,
+    "creator": "stacknil-rs-canary-20260913[bot]",
+    "context": "Repo Sentinel / authoritative gate",
+    "target_sha": "e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c",
+    "state": "success",
+    "created_at": "2026-09-13T11:50:42Z"
+  },
+  "positive_control": {
+    "observed_at": "2026-09-13T11:50:51Z",
+    "head_sha": "e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c",
+    "merge_state": "CLEAN",
+    "mergeable": "MERGEABLE",
+    "test_merge_sha": "4070f510d146f8f9ad4bdbf5eddba684ade97856"
+  },
+  "verdict": "EXPECTED_APP_BINDING_PROVEN",
+  "architecture_consequence": "USE_PULL_REQUEST_TARGET_PLUS_APP_SIGNER"
+}

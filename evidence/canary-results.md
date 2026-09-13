@@ -244,19 +244,75 @@ stacknil-rs-canary-20260913[bot]       App ID 4927837
 A dedicated-App status sample is captured in
 [`app-identity.json`](app-identity.json).
 
+## Second-Owner Fork Control
+
+The final control used a real GitHub fork in the same fork network:
+
+- Base: `stacknil/repo-sentinel-authority-canary`, repository ID `1368047925`,
+  owner `stacknil`.
+- Fork: `stacknil-rs-gate-canary/repo-sentinel-authority-canary`, repository ID
+  `1368335926`, owner `stacknil-rs-gate-canary`.
+
+GitHub reported the fork's parent and source as the base repository, both with
+repository ID `1368047925`.
+
+### Pull Request and Automatic Check
+
+| Field | Value |
+| --- | --- |
+| PR | `#5` |
+| H | `e5d3cb407cbfb3baebc1d2ea38fec5af85232a4c` |
+| B | `cdc6850b02e07c5e1b8eda990900173ba9c72948` |
+| Test merge | `4070f510d146f8f9ad4bdbf5eddba684ade97856` |
+| Workflow run | `34755462068` |
+| Job/check | `103718960006` |
+| Check App | `github-actions`, App ID `15368` |
+| Check result | `success` on exact H |
+| Workflow approval required | no |
+
+The active rule was read back before evaluating mergeability:
+
+```json
+{
+  "strict": false,
+  "checks": [
+    {
+      "context": "Repo Sentinel / authoritative gate",
+      "app_id": 4927837
+    }
+  ]
+}
+```
+
+### Decisive Transition
+
+At `2026-09-13T11:50:31Z`, the canonical Actions check was successful on H,
+the dedicated-App canonical status was absent, and PR `#5` was `BLOCKED`.
+
+Without changing H, the dedicated App published success status `54070139703`
+to H at `2026-09-13T11:50:42Z`. The creator was
+`stacknil-rs-canary-20260913[bot]`, App ID `4927837`.
+
+At `2026-09-13T11:50:51Z`, PR `#5` was `CLEAN` and `MERGEABLE`. The head and
+test-merge SHAs were unchanged.
+
+The complete machine-readable record is in
+[`second-owner-fork-canary.json`](second-owner-fork-canary.json).
+
 ## Final Spoofability Verdict
 
-`INCONCLUSIVE`
+`EXPECTED_APP_BINDING_PROVEN`
 
-Same-repository evidence proves that App ID `4927837` rejects Actions-only
-success and accepts only the dedicated App's positive result. However, the
-required fork negative control was not executed. The experiment therefore does
-not claim the broader `EXPECTED_APP_BINDING_PROVEN` verdict.
+The true second-owner fork control confirms that a same-name GitHub Actions
+success from App ID `15368` cannot satisfy the context bound to App ID
+`4927837`. A dedicated-App success on the same exact head changed the PR from
+`BLOCKED` to `CLEAN`.
 
 ## Architecture Consequence
 
-`RESEARCH_MORE`
+`USE_PULL_REQUEST_TARGET_PLUS_APP_SIGNER`
 
-The remaining experiment is narrow: repeat the decisive missing-App and
-App-success rows on a true second-owner fork PR. No production workflow or
-signer architecture should be activated from this incomplete canary alone.
+The tested authority boundary is suitable for implementation: trusted
+`pull_request_target` compute may publish an exact-head Commit Status through a
+dedicated GitHub App. This result does not itself activate a production
+workflow or change any production rule.
