@@ -1,0 +1,2 @@
+This content-only change exercises the dedicated GitHub App status source.
+It intentionally adds no pull_request workflow with the protected context.
