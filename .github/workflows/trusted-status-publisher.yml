@@ -16,6 +16,15 @@ name: Trusted native status publisher
           - pending
           - failure
           - success
+      check_outcome:
+        description: Optional ordered same-name Check Run outcome
+        required: true
+        default: absent
+        type: choice
+        options:
+          - absent
+          - success
+          - failure
 
 permissions:
   statuses: write
@@ -52,3 +61,24 @@ jobs:
             -f state="$STATE" \
             -f context="Repo Sentinel / authoritative gate" \
             -f description="Trusted native canary state: $STATE"
+
+  ordered-check:
+    name: Repo Sentinel / authoritative gate
+    needs: publish
+    if: ${{ inputs.check_outcome != 'absent' }}
+    permissions: {}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit requested check conclusion after status publication
+        env:
+          CHECK_OUTCOME: ${{ inputs.check_outcome }}
+        shell: bash
+        run: |
+          case "$CHECK_OUTCOME" in
+            success) exit 0 ;;
+            failure) exit 1 ;;
+            *)
+              echo "unsupported check outcome" >&2
+              exit 1
+              ;;
+          esac
