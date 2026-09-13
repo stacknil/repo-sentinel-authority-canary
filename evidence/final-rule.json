@@ -1,0 +1,12 @@
+{
+  "strict": false,
+  "contexts": [
+    "Repo Sentinel / authoritative gate"
+  ],
+  "checks": [
+    {
+      "context": "Repo Sentinel / authoritative gate",
+      "app_id": 4927837
+    }
+  ]
+}

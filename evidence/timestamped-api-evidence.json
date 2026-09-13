@@ -1,0 +1,246 @@
+{
+  "recorded_at": "2026-09-13T07:27:37Z",
+  "repository": {
+    "id": 1368047925,
+    "name": "stacknil/repo-sentinel-authority-canary"
+  },
+  "workflow_runs": [
+    {
+      "run_id": 34740070082,
+      "check_id": 103678171058,
+      "event": "pull_request",
+      "head_sha": "73db2a6abe34b5b8d146825db596b479d91c748c",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T05:20:48Z",
+      "completed_at": "2026-09-13T05:20:53Z"
+    },
+    {
+      "run_id": 34740203019,
+      "check_id": 103678517603,
+      "event": "pull_request",
+      "head_sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "check_name": "Harmless baseline",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T05:24:02Z",
+      "completed_at": "2026-09-13T05:24:07Z"
+    },
+    {
+      "run_id": 34740203090,
+      "check_id": 103678517601,
+      "event": "pull_request",
+      "head_sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T05:24:02Z",
+      "completed_at": "2026-09-13T05:24:08Z"
+    },
+    {
+      "run_id": 34741616805,
+      "check_id": 103682160107,
+      "event": "pull_request",
+      "head_sha": "c98d4ed74788450f67ae2e85c34ad4b506836b97",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "failure",
+      "created_at": "2026-09-13T05:58:59Z",
+      "completed_at": "2026-09-13T05:59:04Z"
+    },
+    {
+      "run_id": 34741675629,
+      "check_id": 103682308929,
+      "event": "pull_request",
+      "head_sha": "554739ae4c292bd34ababcd20e7e4e9e95484642",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T06:00:20Z",
+      "completed_at": "2026-09-13T06:00:27Z"
+    },
+    {
+      "run_id": 34742095420,
+      "check_id": 103683402180,
+      "event": "pull_request",
+      "head_sha": "93a893153b07df3eac788baea3c763007c07e0e3",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T06:10:35Z",
+      "completed_at": "2026-09-13T06:10:44Z"
+    },
+    {
+      "run_id": 34744808587,
+      "check_id": 103690646237,
+      "event": "workflow_dispatch",
+      "head_sha": "0b4480f9a6156b2fe23b6e39bf30deb8da0af7cd",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "success",
+      "created_at": "2026-09-13T07:16:11Z",
+      "completed_at": "2026-09-13T07:16:31Z"
+    },
+    {
+      "run_id": 34744858453,
+      "check_id": 103690790043,
+      "event": "workflow_dispatch",
+      "head_sha": "0b4480f9a6156b2fe23b6e39bf30deb8da0af7cd",
+      "check_name": "Repo Sentinel / authoritative gate",
+      "app_id": 15368,
+      "conclusion": "failure",
+      "created_at": "2026-09-13T07:17:23Z",
+      "completed_at": "2026-09-13T07:17:35Z"
+    }
+  ],
+  "commit_statuses": [
+    {
+      "status_id": 54063960070,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "pending",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:27:25Z"
+    },
+    {
+      "status_id": 54063973336,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "failure",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:28:16Z"
+    },
+    {
+      "status_id": 54063996060,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "success",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:29:40Z"
+    },
+    {
+      "status_id": 54064046255,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "failure",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:32:39Z"
+    },
+    {
+      "status_id": 54064141145,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "success",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:38:27Z"
+    },
+    {
+      "status_id": 54064455930,
+      "sha": "c98d4ed74788450f67ae2e85c34ad4b506836b97",
+      "state": "success",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:58:15Z"
+    },
+    {
+      "status_id": 54064481583,
+      "sha": "554739ae4c292bd34ababcd20e7e4e9e95484642",
+      "state": "failure",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T05:59:58Z"
+    },
+    {
+      "status_id": 54064661888,
+      "sha": "93a893153b07df3eac788baea3c763007c07e0e3",
+      "state": "pending",
+      "creator": "github-actions[bot]",
+      "created_at": "2026-09-13T06:09:59Z"
+    },
+    {
+      "status_id": 54065569013,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "pending",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:06:13Z"
+    },
+    {
+      "status_id": 54065593467,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "failure",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:07:40Z"
+    },
+    {
+      "status_id": 54065598101,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:07:56Z"
+    },
+    {
+      "status_id": 54065617821,
+      "sha": "cb029710cc02536cdf50c7f25c858b6ff274bf92",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:09:04Z"
+    },
+    {
+      "status_id": 54065655693,
+      "sha": "cb029710cc02536cdf50c7f25c858b6ff274bf92",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:11:12Z"
+    },
+    {
+      "status_id": 54065661260,
+      "sha": "2487dccbd98848c7872b3052ccc6f889e45012c7",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:11:32Z"
+    },
+    {
+      "status_id": 54065673368,
+      "sha": "a83d8f8fedd2155e811babe417be34e0cf8b87bb",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:12:15Z"
+    },
+    {
+      "status_id": 54065709122,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "failure",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:14:22Z"
+    },
+    {
+      "status_id": 54065712636,
+      "sha": "c9030f823a24a5ed998a2ce66c1955f466f435c1",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:14:34Z"
+    },
+    {
+      "status_id": 54065727684,
+      "sha": "0b4480f9a6156b2fe23b6e39bf30deb8da0af7cd",
+      "state": "failure",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:15:28Z"
+    },
+    {
+      "status_id": 54065755022,
+      "sha": "0b4480f9a6156b2fe23b6e39bf30deb8da0af7cd",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:17:04Z"
+    },
+    {
+      "status_id": 54065772072,
+      "sha": "0b4480f9a6156b2fe23b6e39bf30deb8da0af7cd",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:18:07Z"
+    },
+    {
+      "status_id": 54065823615,
+      "sha": "2487dccbd98848c7872b3052ccc6f889e45012c7",
+      "state": "success",
+      "creator": "stacknil-rs-canary-20260913[bot]",
+      "created_at": "2026-09-13T07:21:20Z"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "repository": {
+    "id": 1368047925,
+    "name": "stacknil/repo-sentinel-authority-canary"
+  },
+  "app": {
+    "id": 4927837,
+    "slug": "stacknil-rs-canary-20260913"
+  },
+  "installation": {
+    "id": 161305593,
+    "repository_selection": "selected",
+    "repository": "stacknil/repo-sentinel-authority-canary",
+    "permissions": {
+      "metadata": "read",
+      "pull_requests": "read",
+      "statuses": "write"
+    }
+  },
+  "status_sample": {
+    "id": 54065823615,
+    "sha": "2487dccbd98848c7872b3052ccc6f889e45012c7",
+    "state": "success",
+    "context": "Repo Sentinel / authoritative gate",
+    "creator": "stacknil-rs-canary-20260913[bot]",
+    "created_at": "2026-09-13T07:21:20Z"
+  }
+}
