@@ -1,0 +1,54 @@
+---
+name: Trusted native status publisher
+
+'on':
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Exact 40-character commit SHA to receive the canary status
+        required: true
+        type: string
+      state:
+        description: Commit Status state
+        required: true
+        type: choice
+        options:
+          - pending
+          - failure
+          - success
+
+permissions:
+  statuses: write
+
+jobs:
+  publish:
+    name: Publish trusted Commit Status
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate inputs and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          STATE: ${{ inputs.state }}
+          TARGET_SHA: ${{ inputs.target_sha }}
+        shell: bash
+        run: |
+          if [[ ! "$TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "target_sha must be an exact lowercase 40-character SHA" >&2
+            exit 1
+          fi
+
+          case "$STATE" in
+            pending|failure|success) ;;
+            *)
+              echo "unsupported state" >&2
+              exit 1
+              ;;
+          esac
+
+          gh api \
+            --method POST \
+            "repos/$GH_REPO/statuses/$TARGET_SHA" \
+            -f state="$STATE" \
+            -f context="Repo Sentinel / authoritative gate" \
+            -f description="Trusted native canary state: $STATE"
