@@ -1,0 +1,14 @@
+name: Fork authority spoof canary
+
+on:
+  pull_request:
+
+permissions: {}
+
+jobs:
+  spoof:
+    name: Repo Sentinel / authoritative gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit harmless canary result
+        run: echo "harmless second-owner fork authority canary"
