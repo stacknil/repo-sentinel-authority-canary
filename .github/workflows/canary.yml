@@ -8,8 +8,8 @@ permissions: {}
 
 jobs:
   baseline:
-    name: Harmless baseline
+    name: Repo Sentinel / authoritative gate
     runs-on: ubuntu-latest
     steps:
-      - name: Succeed without repository content
+      - name: Succeed after pending status without repository content
         run: exit 0
