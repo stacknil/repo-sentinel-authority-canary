@@ -1,0 +1,2 @@
+Disposable exact-head binding canary.
+Second commit moves the pull-request head.
