@@ -1,0 +1,3 @@
+This content-only change exercises the dedicated GitHub App status source.
+It intentionally adds no pull_request workflow with the protected context.
+This second revision verifies that an H1 status cannot authorize H2.
