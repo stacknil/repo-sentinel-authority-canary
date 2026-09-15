@@ -1,0 +1,1 @@
+Harmless head-versus-test-merge precedence probe for Gate 1B.
