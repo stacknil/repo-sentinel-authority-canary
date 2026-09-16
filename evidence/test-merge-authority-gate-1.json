@@ -1,0 +1,196 @@
+{
+  "schema": "repo-sentinel.test-merge-authority-canary.v1",
+  "recorded_at": "2026-09-15T01:24:23.824Z",
+  "verdict": "TEST_MERGE_AUTHORITY_BROKEN",
+  "repository": {
+    "full_name": "stacknil/repo-sentinel-authority-canary",
+    "repository_id": 1368047925,
+    "default_branch": "main"
+  },
+  "authority": {
+    "context": "Repo Sentinel / authoritative gate",
+    "app": {
+      "slug": "stacknil-rs-merge-canary-20260915",
+      "app_id": 4943620,
+      "installation_id": 161698223,
+      "permissions": {
+        "metadata": "read",
+        "pull_requests": "read",
+        "commit_statuses": "write"
+      },
+      "repository_selection": "selected",
+      "selected_repository_ids": [
+        1368047925
+      ]
+    },
+    "required_status_rule": {
+      "strict": true,
+      "checks": [
+        {
+          "context": "Repo Sentinel / authoritative gate",
+          "app_id": 4943620
+        }
+      ]
+    }
+  },
+  "gate_1a": {
+    "result": "PASS",
+    "pull_request": {
+      "number": 6,
+      "id": 4532159064,
+      "base_sha": "7262fcca3e93385d15e19b850a615c5bc4d2c77a",
+      "head_sha": "ddd7ed65c62ef2793cb4d2df429117ebb9fe5589",
+      "merge_sha": "28a83d20190a5cb7b041c4f3d0ea183ee8e09350",
+      "test_merge_ref": "refs/pull/6/merge"
+    },
+    "initial_observation": {
+      "observed_at": "2026-09-15T01:00:44.8288556Z",
+      "head_canonical_statuses": [],
+      "merge_canonical_statuses": [],
+      "mergeable_state": "blocked"
+    },
+    "merge_status": {
+      "observed_at": "2026-09-15T01:01:08Z",
+      "status_id": 54164255469,
+      "node_id": "SC_kwDOUYrBNc8AAAAMnHDy7Q",
+      "target_sha": "28a83d20190a5cb7b041c4f3d0ea183ee8e09350",
+      "state": "success",
+      "creator": "stacknil-rs-merge-canary-20260915[bot]",
+      "creator_id": 329214371,
+      "app_id": 4943620
+    },
+    "actual_eligibility": {
+      "observed_at_minute_utc": "2026-09-15T01:04Z",
+      "source": "authenticated GitHub pull-request UI",
+      "all_checks_passed": true,
+      "successful_check_count": 2,
+      "merge_button_enabled": true,
+      "api_mergeable_state": "unstable",
+      "note": "The UI was the decisive eligibility observation; the generic API state did not encode the App-bound test-merge result."
+    }
+  },
+  "gate_1b": {
+    "result": "PASS_WITH_MISSING_M_FALLBACK_LIMITATION",
+    "pull_request": {
+      "number": 9,
+      "id": 4532185964,
+      "base_sha": "7262fcca3e93385d15e19b850a615c5bc4d2c77a",
+      "head_sha": "2c0a4929d6986756c1bfad65680dfaa216fe4ae6",
+      "merge_sha": "b083a456d46c9978ed3ccfe15aa87afe3ec62339"
+    },
+    "head_success": {
+      "status_id": 54164613711,
+      "target_sha": "2c0a4929d6986756c1bfad65680dfaa216fe4ae6",
+      "state": "success",
+      "app_id": 4943620
+    },
+    "observations": [
+      {
+        "status_posted_at": "2026-09-15T01:10:01Z",
+        "head_state": "success",
+        "merge_state": "absent",
+        "eligibility": "clean",
+        "ui_merge_button_enabled": true,
+        "note": "When M has no canonical context, GitHub falls back to the same App/context result on H."
+      },
+      {
+        "status_posted_at": "2026-09-15T01:11:55.0434088Z",
+        "head_state": "success",
+        "merge_state": "pending",
+        "merge_status_id": 54164689692,
+        "eligibility": "blocked",
+        "ui_merge_button_enabled": false
+      },
+      {
+        "status_posted_at": "2026-09-15T01:13:52.1258843Z",
+        "head_state": "success",
+        "merge_state": "failure",
+        "merge_status_id": 54164763333,
+        "eligibility": "blocked",
+        "ui_merge_button_enabled": false
+      },
+      {
+        "status_posted_at": "2026-09-15T01:16:15.5293063Z",
+        "head_state": "success",
+        "merge_state": "success",
+        "merge_status_id": 54164856422,
+        "eligibility": "clean",
+        "ui_merge_button_enabled": true
+      }
+    ],
+    "conclusion": "A canonical context on M takes precedence over the same App/context on H, but an absent M context is not an exclusive M-only authority slot."
+  },
+  "gate_1e": {
+    "result": "FAIL",
+    "pull_request": {
+      "number": 8,
+      "id": 4532161513,
+      "base_sha": "7262fcca3e93385d15e19b850a615c5bc4d2c77a",
+      "head_sha": "a596a1ef088a468841962c010e6e6583177453c9"
+    },
+    "repeated_merge_attempt_sequences": [
+      {
+        "authorized_merge_sha": "8400be1476c514abe4ad08e29c2c952657b91f84",
+        "status_id": 54164934707,
+        "next_merge_sha_after_rejected_merge": "7de9e1961b3e4e19c16fad2083086c5fa897cb0b"
+      },
+      {
+        "authorized_merge_sha": "7de9e1961b3e4e19c16fad2083086c5fa897cb0b",
+        "status_id": 54165009388,
+        "stable_api_samples": {
+          "count": 3,
+          "first_observed_at": "2026-09-15T01:20:13.9038048Z",
+          "last_observed_at": "2026-09-15T01:20:20.1328569Z"
+        },
+        "next_merge_sha_after_rejected_merge": "426e2b40cf3d07f74c1c10a40e03edb72d29fe27"
+      },
+      {
+        "authorized_merge_sha": "426e2b40cf3d07f74c1c10a40e03edb72d29fe27",
+        "status_id": 54165082580,
+        "status_state": "success",
+        "status_app_id": 4943620,
+        "current_immediately_before_merge_request": true,
+        "merge_request": {
+          "method": "PUT /repos/stacknil/repo-sentinel-authority-canary/pulls/8/merge",
+          "result": "HTTP 405",
+          "message": "Required status check Repo Sentinel / authoritative gate is expected."
+        },
+        "after": {
+          "base_sha": "7262fcca3e93385d15e19b850a615c5bc4d2c77a",
+          "head_sha": "a596a1ef088a468841962c010e6e6583177453c9",
+          "merge_sha": "103dcca1fd18610771df6d3e4cf506f4e9b38433",
+          "mergeable_state": "blocked",
+          "merged": false
+        },
+        "observed_at": "2026-09-15T01:22:11.5339419Z"
+      }
+    ],
+    "invariants": {
+      "base_unchanged": true,
+      "head_unchanged": true,
+      "authorized_merge_sha_current_before_request": true,
+      "merge_sha_changed_during_rejected_merge_request": true,
+      "actual_merge_completed": false
+    },
+    "failure": "A real merge request regenerated the test-merge commit after the current M had received the required App success. The request then evaluated the replacement M, found no required result, and failed."
+  },
+  "stopped_gates": {
+    "gate_1c": "Not completed because the harmless base-advance PR could not be merged through the candidate authority slot.",
+    "gate_1d": "Not run after the candidate publication target failed actual merge execution.",
+    "gate_1f": "Not run after the candidate publication target failed actual merge execution.",
+    "gate_1g": "Not repeated; Gate 0 source-binding evidence remains independent and unchanged."
+  },
+  "signer_protocol_evaluation": {
+    "result": "NOT_ADVANCED",
+    "reason": "The proposed immutable publication and UNKNOWN/run-ordering protocol cannot repair instability of the GitHub commit used as its sole authority target."
+  },
+  "scope": {
+    "production_repositories_modified": false,
+    "sec_writeups_public_modified": false,
+    "production_app_created": false,
+    "local_repository_content_executed": false,
+    "production_scanner_executed": false,
+    "canary_pull_request_workflows_ran": true,
+    "secrets_recorded": false
+  }
+}
